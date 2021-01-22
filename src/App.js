@@ -15,7 +15,6 @@ const App = () => {
       .get("https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8")
       .then((res) => {
         setCharacters(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log("err detected");
