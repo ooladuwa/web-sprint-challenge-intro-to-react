@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Button from "./Button";
 
 const StyledWrapper = styled.div`
   color: blue;
-
   button {
     color: red;
     background-color: black;
@@ -19,25 +19,14 @@ const StyledWrapper = styled.div`
 
 export default function Character(props) {
   const { character } = props;
+
   return (
     <StyledWrapper Id="character-info">
       <h2>{character.name}</h2>
-
-      <button
-        onClick={() => {
-          const buttonDiv = document.querySelector(".buttonDiv");
-          if (buttonDiv.style.display === "none") {
-            buttonDiv.style.display = "block";
-          } else {
-            buttonDiv.style.display = "none";
-          }
-        }}
-      >
-        More Info
-      </button>
+      <img src={character.image} alt="Rick and Morty character" />
+      <Button />
       <div className="buttonDiv">
         <p>Gender: {character.gender}</p>
-        <img src={character.image} alt="Rick and Morty character" />
         <p>Location: {character.location.name}</p>
         <p>Species: {character.species}</p>
         <p>Status: {character.status}</p>
